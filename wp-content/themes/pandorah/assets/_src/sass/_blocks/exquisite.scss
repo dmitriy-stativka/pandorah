@@ -1,0 +1,92 @@
+.exquisite{
+    position: relative;
+    margin: 6rem 0;
+    cursor: pointer;
+
+    @media (max-width: 1024px) {
+        margin: 0;
+        padding: 0 15px 4rem 15px;
+    }
+
+    &-content{
+        color: var(--primary-color1);
+        transform: translateX(100%);
+        opacity: 0;
+        min-width: 50%;
+        transition: opacity .5s ease, transform .5s ease, min-width .5s ease;
+    }
+
+    .container{
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding: 0 0 100px 0;
+
+        &:after{
+            content: '';
+            background: var(--primary-color1);
+            opacity: .5;
+            width: 105px;
+            height: 2px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            transition: opacity .5s ease, width .5s ease;
+        }
+
+        @media (max-width: 1024px) {
+            padding: 0 0 50px 0;
+        }
+    }
+
+    &-media{
+        min-width: 100%;
+        transition: min-width .5s ease;
+    }
+
+    img{
+        filter: grayscale(1);
+        max-width: 250px;
+        max-height: 250px;
+        width: 100%;
+        height: 100%;   
+        transition: max-width .5s ease, max-height .5s ease, filter .5s ease;
+        display: block;
+        margin: auto;
+
+        &:hover{
+            filter: grayscale(0);
+            transition: all .5s ease;
+        }
+    }
+
+    &.active{
+        .container{
+            &:after{
+                width: 100%;
+                opacity: 1;
+                transition: opacity .5s ease, width .5s ease;
+            }
+        }
+
+        .exquisite-media{
+            min-width: 50%;
+            transition: min-width .5s ease;
+        }
+
+        .exquisite-content{
+            transform: translateX(0%);
+            opacity: 1;
+            transition: opacity .5s ease, transform .5s ease, min-width .5s ease;
+        }
+
+        img{
+            filter: grayscale(0);
+            max-width: 530px;
+            max-height: 530px;
+            transition: max-width .5s ease, max-height .5s ease, filter .5s ease;
+        }
+    }
+}

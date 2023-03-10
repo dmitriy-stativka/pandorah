@@ -1,0 +1,104 @@
+@include media("<=desktop") {
+  .navbar-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px var(--page-gutter);
+    height: var(--navbar-height, 60px);
+    background-color: var(--header-mobile-bg);
+
+    a {
+      color: var(--link-color);
+    }
+
+    &__inner {
+      top: calc(var(--navbar-height, 60px) + var(--wc-notice-height, 1px));
+      background-color: var(--header-mobile-bg);
+      width: 100%;
+      height: 100%;
+      right: 0;
+      position: fixed;
+      opacity: 1;
+      max-height: 0;
+      overflow: hidden;
+      pointer-events: none;
+      transition: all .3s;
+
+      .admin-bar & {
+        top: calc(var(--navbar-height, 60px) + var(--wc-notice-height, 1px) + var(--admin-bar));
+      }
+
+      .nav-active & {
+        opacity: 1;
+        max-height: calc(100% - calc(var(--navbar-height, 60px) + var(--wc-notice-height, 1px)));
+        pointer-events: auto;
+        overflow-y: auto;
+        padding: 15px var(--page-gutter);
+      }
+
+      .site-header__widget {
+        padding-bottom: 5px;
+      }
+    }
+
+    .nav-main__links {
+      a {
+        display: block;
+      }
+
+      > .menu-item {
+        > a, .plain-menu-item {
+          padding: var(--link-gap) 0;
+          display: inline-block;
+          font-size: var(--link-size-l1);
+          color: var(--link-color);
+          width: 100%;
+        }
+      }
+
+      .menu-item-has-children {
+        > a {
+          position: relative;
+        }
+
+        &.is-toggled {
+          > a:after {
+            transform: rotate(0) translateY(-50%);
+          }
+        }
+      }
+    }
+
+    .sub-menu {
+      padding-top: 5px;
+      padding-left: 20px;
+      overflow: hidden;
+      transition: height 0.36s ease-in-out;
+      a {
+        padding: 5px 0;
+        font-size: var(--link-size-l2);
+        color: var(--link-color);
+      }
+
+      .current-menu-item {
+        a {
+          color: var(--secondary-color1);
+        }
+      }
+    }
+
+    .btn-custom, .links-list {
+      margin: var(--link-gap) 0;
+    }
+  }
+
+  .nav-active {
+    &, .site-content {
+      overflow: hidden;
+    }
+
+    .site-content {
+      pointer-events: none;
+    }
+  }
+}

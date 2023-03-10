@@ -1,0 +1,56 @@
+.hero_section{
+    height: 70vh;
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    overflow: hidden;
+
+    @media (max-width: 1024px) {
+        padding: 4rem 10px;
+
+        img{
+            width: 60%;
+        }
+    }
+
+    &.noise{
+        overflow: hidden;
+
+        &:after{
+            opacity: 0.15;
+        }
+    }
+
+    &-img,
+    &-box{
+        position: relative;
+        z-index: 9;
+    }
+
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 70px;
+
+        @media (max-width: 1024px) {
+            flex-direction: column;
+        }
+    }
+
+    &-box{
+        max-width: 820px;
+    }
+
+    &-title{
+        color: #E5E5E5;
+        margin: 0;
+    }
+
+    &-description{
+        color: #E5E5E5;
+    }
+}

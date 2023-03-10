@@ -1,0 +1,35 @@
+.mechanism{
+    margin: 6rem 0;
+
+    @media (max-width: 1024px) {
+        margin: 0;
+        padding: 0rem 15px 4rem 15px;
+    }
+    
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+
+        @media (max-width: 1024px) {
+            padding: 0;
+            flex-direction: column;
+        }
+    }
+
+    .c-heading{
+        color: var(--primary-color1);
+        flex-basis: 60%;
+    }
+
+    &-img{
+        flex-basis: 40%;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

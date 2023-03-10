@@ -1,0 +1,21 @@
+/* Typography */
+
+@import '../mixins/font-face';
+
+
+@include addFontFace('passionone', './../../fonts/passionone', ('woff2', 'woff'), (
+		createFontMap('passionone-regular', 400),
+		createFontMap('passionone-bold', 700)
+));
+
+
+@include addFontFace('roboto', './../../fonts/roboto', ('woff2', 'woff'), (
+		createFontMap('roboto-regular', 400),
+		createFontMap('roboto-bold', 700)
+));
+
+
+:root{
+	--font-family-primary: "roboto", sans-serif;
+	--font-family-secondary: "passionone", sans-serif;
+}
