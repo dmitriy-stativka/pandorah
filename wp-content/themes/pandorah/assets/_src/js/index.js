@@ -25,38 +25,113 @@ window.addEventListener('load', () => {
 	setTimeout(	top, 100);
 
 
-    document.querySelector('.--preview-screen-btn').addEventListener('click', function(){
-        document.querySelector('.--preview-screen-message').classList.add('show');
-        document.querySelector('.--preview-screen').classList.add('active');
-    })
+    // document.querySelector('.--preview-screen-btn').addEventListener('click', function(){
+    //     document.querySelector('.--preview-screen-message').classList.add('show');
+    //     document.querySelector('.--preview-screen').classList.add('active');
+    // })
 
-    document.querySelector('.--preview-screen-close').addEventListener('click', function(){
-        document.querySelector('.--preview-screen-message').classList.remove('show');
-        document.querySelector('.--preview-screen').classList.remove('active');
-    })
-
-	document.querySelector('.exquisite').addEventListener('click', function(){
-		this.classList.toggle('active');
-	})
+   
+	// document.querySelector('.--preview-screen-down').addEventListener('click', function(){
+	// 	// document.querySelector('.--preview-screen').classList.add('up');
 
 
-	document.querySelector('.--preview-screen-down').addEventListener('click', function(){
-		document.querySelector('.--preview-screen').classList.add('up');
-		document.querySelector('body').classList.remove('overflow');
-		document.querySelector('.--preview-screen-message-box').classList.add('go');
-		document.querySelector('.--preview-screen-message').classList.add('scale');
-		document.querySelector('.-go_up').classList.add('show');
-	})
+	// 	// document.querySelector('.--preview-screen-message-box').classList.add('go');
+	// 	// document.querySelector('.--preview-screen-message').classList.add('scale');
+	// 	document.querySelector('.-go_up').classList.add('show');
+	// })
 
 
 	document.querySelector('.-go_up').addEventListener('click', function(){
-		document.querySelector('.--preview-screen-message-box').classList.remove('go');
-		document.querySelector('.--preview-screen-message').classList.remove('scale');
-		document.querySelector('.--preview-screen').classList.remove('up');
+		// document.querySelector('.--preview-screen-message-box').classList.remove('go');
+		// document.querySelector('.--preview-screen-message').classList.remove('scale');
+		// document.querySelector('.--preview-screen').classList.remove('up');
 		window.scrollTo({top: 0, behavior: 'smooth'});
 		document.querySelector('.-go_up').classList.remove('show');
-        document.querySelector('body').classList.add('overflow');
+        // document.querySelector('body').classList.add('overflow');
 	})
+
+
+	let exquisite = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".exquisite",
+			start: "center center",
+			end: "+=900",
+			toggleClass: "active"
+		},
+	});
+
+
+	let userContent = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".user_content",
+			start: "center center",
+			end: "+=900",
+			toggleClass: "active"
+		},
+	});
+
+
+	
+
+	let previewScreen = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".--preview-screen",
+			start: "center center",
+			end: "+=900",
+			toggleClass: "active",
+			markers: false,
+		},
+	});
+
+	// let screenDown = gsap.timeline({
+	// 	scrollTrigger: {
+	// 		trigger: ".-go_up",
+	// 		start: "center center",
+	// 		end: "+=900",
+	// 		toggleClass: "show",
+	// 		markers: false	
+	// 	},
+	// });
+
+
+
+		let scrollpos = window.scrollY
+
+		const header = document.querySelector(".--preview-screen-content")
+		const scrollChange = 700
+
+		const add_class_on_scroll = () => header.classList.add("opacity")
+		const remove_class_on_scroll = () => header.classList.remove("opacity")
+
+		window.addEventListener('scroll', function() { 
+		scrollpos = window.scrollY;
+
+		if (scrollpos >= scrollChange) { add_class_on_scroll() }
+		else { remove_class_on_scroll() }
+		
+		})
+
+
+
+
+
+		let scrolltoTop = window.scrollY
+		const Gotop = document.querySelector(".-go_up")
+		const scrollToChange = 700
+
+		const add_class_on_scroll_up = () => Gotop.classList.add("show")
+		const remove_class_on_scroll_up = () => Gotop.classList.remove("show")
+
+		window.addEventListener('scroll', function() { 
+		scrolltoTop = window.scrollY;
+
+		if (scrolltoTop >= scrollToChange) { add_class_on_scroll_up() }
+		else { remove_class_on_scroll_up() }
+		
+		})
+
+
+
 
 
     // GSAP Animation

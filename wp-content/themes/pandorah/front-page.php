@@ -10,28 +10,30 @@
 get_header(); ?>
 
 
-<section class="--preview-screen noise" style="background-image: url(<?php the_field('background_start_block');?>)">
-    <div class="--preview-screen-box">
-        <span class="--preview-screen-title"><?php the_field('start_title');?></span>
-        <div class="--preview-screen-btn"></div>
-    </div>
-    <div class="--preview-screen-message">
-      <div class="--preview-screen-message-box">
-        <span class="--preview-screen-close"></span>
-            <img src="./wp-content/themes/pandorah/assets/_src/images/img1.png" alt="Logo">
-            <span class="--preview-screen-pretitle"><?php the_field('popup_pretitle');?></span>
-            <h2 class="--preview-screen-h2"><?php the_field('popup_title');?></h2>
-            <p class="--preview-screen-description"><?php the_field('popup_text');?></p>
-            <button class="--preview-screen-down">
-                <svg width="22" height="36" viewBox="0 0 22 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2.45044 23.0996L11.0003 31.6495L19.5502 23.0996" stroke="#6B553B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M2.45044 13.7246L11.0003 22.2745L19.5502 13.7246" stroke="#6B553B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M2.45044 4.34961L11.0003 12.8995L19.5502 4.34961" stroke="#6B553B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-      </div>
-    </div>
-</section>
+<div class="--preview-screen-content">
+    <section class="--preview-screen">
+    <img class="--preview-screen-img" src="<?php the_field('background_start_block');?>" alt="">
+        <div class="--preview-screen-box">
+            <span class="--preview-screen-title"><?php the_field('start_title');?></span>
+            <div class="--preview-screen-btn"></div>
+        </div>
+        <div class="--preview-screen-message">
+            <div class="--preview-screen-message-box">
+                    <img src="./wp-content/themes/pandorah/assets/_src/images/img1.png" alt="Logo">
+                    <span class="--preview-screen-pretitle"><?php the_field('popup_pretitle');?></span>
+                    <h2 class="--preview-screen-h2"><?php the_field('popup_title');?></h2>
+                    <p class="--preview-screen-description"><?php the_field('popup_text');?></p>
+                    <button class="--preview-screen-down">
+                        <svg width="22" height="36" viewBox="0 0 22 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.45044 23.0996L11.0003 31.6495L19.5502 23.0996" stroke="#6B553B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2.45044 13.7246L11.0003 22.2745L19.5502 13.7246" stroke="#6B553B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2.45044 4.34961L11.0003 12.8995L19.5502 4.34961" stroke="#6B553B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+            </div>
+        </div>
+    </section>
+</div>
 
 <div class="wrapper overflow">
 

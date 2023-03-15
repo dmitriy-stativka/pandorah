@@ -65,14 +65,17 @@
 
             transition: all .5s ease;
         }
+    }
 
-        @media (min-width: 1024px) {
-            &:hover{
+
+    @media (min-width: 1024px) {
+        &.active{
+            .user_content-img{
                 clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
                 width: 100%;
                 height: 100vh;
                 transition: all .5s ease;
-    
+                
                 img{
                     transform: scale(1) translate(0%, 0%);
                     transition: all .5s ease;
@@ -80,6 +83,5 @@
             }
         }
     }
-
 
 }
