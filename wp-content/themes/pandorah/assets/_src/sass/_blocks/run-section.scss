@@ -2,6 +2,9 @@
     &-section{
         margin: 6rem 0;
 
+        display: flex;
+
+
         @media (max-width: 1024px) {
             margin: 0;
             padding: 0 15px 4rem 15px;
@@ -20,4 +23,33 @@
             border-radius: 15px;
         }
     }
+}
+
+
+.line_stroke{
+    &_1{
+        animation: sliderLineOne 46s linear infinite;
+    }
+
+    &_2{
+        animation: sliderLineTwo 46s -23s linear infinite;
+    }
+}
+
+@keyframes sliderLineOne {
+    0% {
+        transform: translateX(100%) 
+    }
+    100%{
+        transform: translate(-100%) 
+    } 
+}
+ 
+@keyframes sliderLineTwo {
+    0% {
+        transform: translateX(0%) 
+    }
+    100%{
+        transform: translate(-200%)
+    } 
 }

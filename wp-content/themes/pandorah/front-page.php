@@ -12,7 +12,7 @@ get_header(); ?>
 
 <div class="--preview-screen-content">
     <section class="--preview-screen">
-    <img class="--preview-screen-img" src="<?php the_field('background_start_block');?>" alt="">
+        <img class="--preview-screen-img" src="<?php the_field('background_start_block');?>" alt="">
         <div class="--preview-screen-box">
             <span class="--preview-screen-title"><?php the_field('start_title');?></span>
             <div class="--preview-screen-btn"></div>
@@ -50,7 +50,7 @@ get_header(); ?>
     </section>
 
 
-    <section class="user_content">
+    <section class="user_content active">
         <div class="container">
             <div class="user_content-box">    
                 <div class="user_content-img">
@@ -82,7 +82,15 @@ get_header(); ?>
 
 
     <section class="run-section">
-        <div class="run-lines">
+        <div class="run-lines line_stroke_1">
+            <?php if (have_rows('image_list')):
+                while (have_rows('image_list')) : the_row(); ?>
+                    <div class="run-item"><img src="<?php the_sub_field('image');?>" alt="Image"></div>
+                <?php endwhile;
+                endif; 
+            ?>
+        </div>
+        <div class="run-lines line_stroke_2">
             <?php if (have_rows('image_list')):
                 while (have_rows('image_list')) : the_row(); ?>
                     <div class="run-item"><img src="<?php the_sub_field('image');?>" alt="Image"></div>
@@ -93,7 +101,7 @@ get_header(); ?>
     </section>
 
 
-    <section class="exquisite">
+    <section class="exquisite active">
         <div class="container">
             <div class="exquisite-media">
                 <img src="<?php the_field('image_sixth');?>" alt="Image">
