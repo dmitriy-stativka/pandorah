@@ -1,16 +1,5 @@
-.--preview-screen-content{
-  margin-top: 0;
-  transition: margin-top 1s ease;
-
-  &.topGo{
-    margin-top: -300vh;
-    transition: margin-top 1s ease;
-  }
-}
-
 .--preview-screen{
-  // height: 300vh;
-  // min-height: 300px;
+  height: 100vh;
   position: relative;
 
  
