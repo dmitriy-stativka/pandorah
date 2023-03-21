@@ -139,8 +139,16 @@ get_header(); ?>
             </div>
 
             <div class="faq-btns">
-                <a class="c-btn" href="<?php the_field('link_of_first_button');?>"><?php the_field('text_of_first_button');?></a>
-                <a class="c-btn" href="<?php the_field('link_of_second_button');?>"><?php the_field('text_of_second_button');?></a>
+                <?php 
+                    if(get_field('text_of_first_button')){ ?>
+                        <a class="c-btn" href="<?php the_field('link_of_first_button');?>"><?php the_field('text_of_first_button');?></a>
+                    <?php }
+                ?>
+                 <?php 
+                    if(get_field('text_of_second_button')){ ?>
+                        <a class="c-btn" href="<?php the_field('link_of_second_button');?>"><?php the_field('text_of_second_button');?></a>
+                    <?php }
+                ?>
             </div>
         </div>
     </section>
